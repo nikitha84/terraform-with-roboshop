@@ -6,7 +6,7 @@ terraform {
     }
   }
   backend "s3" {
-    bucket = "daws76-bucket"
+    bucket = "roboshop-remote-s3"
     key    = "backend-alb"
     region = "us-east-1"
     use_lockfile = true
