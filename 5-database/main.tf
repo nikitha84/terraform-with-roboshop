@@ -145,7 +145,7 @@ resource "terraform_data" "mysql" {
   ]
   connection {
     type     = "ssh"
-    user     = "centos"
+    user     = "ec2-user"
     password = "DevOps321"
     host     = aws_instance.mysql.private_ip
     }
