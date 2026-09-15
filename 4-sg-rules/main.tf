@@ -13,7 +13,7 @@ resource "aws_security_group_rule" "bastion_laptop" {
   to_port           = 22
   protocol          = "tcp"
   security_group_id = local.bastion_sg_id
-  cidr_blocks = ["0.0.0.0/0"]
+  cidr_blocks = ["0.0.0.0/0"] #this laptop cidr
 }
 
 #mongodb allowing bastion traffic
