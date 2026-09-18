@@ -158,7 +158,7 @@ resource "aws_autoscaling_group" "catalogue" {
 }
 
 resource "aws_autoscaling_policy" "catalogue" {
-  autoscaling_group_name = "aws_autoscaling_group.catalogue.name"
+  autoscaling_group_name = aws_autoscaling_group.catalogue.name
   name                   = "${var.project_name}-${var.environment}-catalogue"
   policy_type            = "TargetTrackingScaling"
   target_tracking_configuration {
