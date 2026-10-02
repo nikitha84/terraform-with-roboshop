@@ -22,3 +22,11 @@ resource "aws_iam_instance_profile" "bastion" {
   name = "bastion"
   role = "BastionTerraformAdmin"
 }
+
+#create dbs
+#cd /home/ec2-user
+#git clone https://github.com/nikitha84/terraform-with-roboshop.git
+#cd terraform-with-roboshop/5-database
+#terraform init
+#terraform apply -auto-approve
+

@@ -47,6 +47,13 @@ resource "aws_ami_from_instance" "catalogue" {
   name               = "catalogue-ami"
   source_instance_id = aws_instance.catalogue.id
   depends_on = [aws_ec2_instance_state.catalogue]
+
+  tags = merge(
+        local.common_tags,
+        {
+            Name = "${var.project_name}-${var.environment}-catalogue-ami"
+        }
+    )
 }
 
 resource "aws_lb_target_group" "catalogue" {
@@ -92,7 +99,7 @@ resource "aws_launch_template" "catalogue" {
 
   ##tags attch to the volume created by instance
   tag_specifications {
-    resource_type = "instance"
+    resource_type = "volume"
 
     tags = merge(
       local.common_tags,
@@ -103,7 +110,6 @@ resource "aws_launch_template" "catalogue" {
   }
 
   ##tags attched to the launch template
-
   tags = merge(
       local.common_tags,
         {
@@ -118,7 +124,7 @@ resource "aws_autoscaling_group" "catalogue" {
   name                 = "${var.project_name}-${var.environment}-catalogue"
   max_size             = 10
   min_size             = 1
-  health_check_grace_period = 100
+  health_check_grace_period = 100 #start instance health check after 100sec
   health_check_type         = "ELB"
   desired_capacity          = 1
   force_delete              = false
