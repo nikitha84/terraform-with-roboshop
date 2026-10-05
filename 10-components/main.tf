@@ -8,6 +8,6 @@ module "components" {
   source = "git::https://github.com/nikitha84/terraform-with-roboshop.git?ref=main"
   #loop component & rule priority
   for_each = var.components
-  component = each.key
+  components = each.key
   rule_priority = each.value.rule_priority
 }
