@@ -5,7 +5,7 @@ resource "aws_acm_certificate" "roboshop" {
   tags = merge(
         local.common_tags,
         {
-            Name = "${var.project_name}-${var.environment}-catalogue"
+          Name = local.common_name_suffix
         }
     )
 

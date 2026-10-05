@@ -42,15 +42,7 @@ variable "sg_names" {
 
     ]
 }
-variable "ports_vpn" {
-    default = ["22", "943", "1194", "443"]
-}
-variable "mongodb_ports_vpn" {
-  default = ["22", "27017"]
-}
-variable "redis_ports_vpn" {
-  default = ["22", "6379"]
-}
+
 # variable "mysql_ports_vpn" {
 #   default = ["22", "3306"]
 # }
