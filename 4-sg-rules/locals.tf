@@ -15,7 +15,7 @@ locals {
 
     frontend_sg_id = data.aws_ssm_parameter.frontend_sg_id.value
 
-    open_vpn_sg_id = data.aws_ssm_parameter.open_vpn_sg_id
+    open_vpn_sg_id = data.aws_ssm_parameter.open_vpn_sg_id.value
 
 
     #vpn sg rules
