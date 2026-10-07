@@ -30,3 +30,7 @@ else
 fi    
 
 ansible-playbook -e component=$component -e environment=$environment main.yaml
+
+
+#for loop
+#for i in 1-vpc/ 2-sg/ 3-bastion/ 4-sg-rules / 5-database/ 6-backend-alb/ 8-acm/ 9-frontend-alb/; do cd $i; terraform apply -auto-approve; cd .. ;done
