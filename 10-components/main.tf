@@ -1,4 +1,4 @@
-module "component" {
+module "components" {
     source = "../../terrafrom-roboshop-component"
     component = var.components
     rule_priority = var.rule_priority
