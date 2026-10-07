@@ -316,16 +316,16 @@ resource "aws_security_group_rule" "catalogue_vpn_8080" {
   source_security_group_id = local.open_vpn_sg_id
 }
 
-#looping all sg ids for vpn
-resource "aws_security_group_rule" "componets_vpn" {
-  for_each = local.vpn_ingress_rules
-  type              = "ingress"
-  from_port         =  each.value.port
-  to_port           = each.value.port
-  protocol          = "tcp"
-  security_group_id = each.value.sg_id
-  source_security_group_id = local.open_vpn_sg_id
-}
+# #looping all sg ids for vpn
+# resource "aws_security_group_rule" "componets_vpn" {
+#   for_each = local.vpn_ingress_rules
+#   type              = "ingress"
+#   from_port         =  each.value.port
+#   to_port           = each.value.port
+#   protocol          = "tcp"
+#   security_group_id = each.value.sg_id
+#   source_security_group_id = local.open_vpn_sg_id
+# }
 
 
 
