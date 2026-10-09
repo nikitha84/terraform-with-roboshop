@@ -1,8 +1,8 @@
-module "components" {
-  source = "../../terraform-roboshop-component"
-  components = var.components
-  rule_priority = var.rule_priority
-}
+# module "components" {
+#   source = "../../terraform-roboshop-component"
+#   components = var.components
+#   rule_priority = var.rule_priority
+# }
 
 # module "components" {
 #   source = "git::https://github.com/nikitha84/terraform-roboshop-component.git?ref=main"
