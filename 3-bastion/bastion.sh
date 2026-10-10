@@ -14,7 +14,7 @@ sudo yum -y install terraform
 cd /home/ec2-user
 git clone https://github.com/nikitha84/terraform-with-roboshop.git
 chown ec2-user:ec2-user -R terraform-with-roboshop
-#chown ec2-user:ec2-user -R terraform-roboshop-component
+chown ec2-user:ec2-user -R terraform-roboshop-component
  #becoz we r deleting aws cmd line in catalogue
 cd terraform-with-roboshop/5-database
 terraform init
