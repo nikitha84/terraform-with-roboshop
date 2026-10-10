@@ -1,5 +1,5 @@
 
-#mongodb allowing bastion traffic
+#mongodb allowing bastion traffic for loggin & health check
 resource "aws_security_group_rule" "mongodb_bastion" {
   type              = "ingress"
   from_port         =  22
@@ -273,56 +273,56 @@ resource "aws_security_group_rule" "bastion_laptop" {
   cidr_blocks = ["0.0.0.0/0"] #this laptop cidr
 }
 
-resource "aws_security_group_rule" "open_vpn_public" {
-  type              = "ingress"
-  from_port         =  22
-  to_port           = 22
-  protocol          = "tcp"
-  security_group_id = local.open_vpn_sg_id
-  cidr_blocks = ["0.0.0.0/0"] #this laptop cidr
-}
+# resource "aws_security_group_rule" "open_vpn_public" {
+#   type              = "ingress"
+#   from_port         =  22
+#   to_port           = 22
+#   protocol          = "tcp"
+#   security_group_id = local.open_vpn_sg_id
+#   cidr_blocks = ["0.0.0.0/0"] #this laptop cidr
+# }
 
-resource "aws_security_group_rule" "open_vpn_443" {
-  type              = "ingress"
-  from_port         =  443
-  to_port           = 443
-  protocol          = "tcp"
-  security_group_id = local.open_vpn_sg_id
-  cidr_blocks = ["0.0.0.0/0"] #this laptop cidr
-}
-resource "aws_security_group_rule" "open_vpn_943" {
-  type              = "ingress"
-  from_port         =  943
-  to_port           = 943
-  protocol          = "tcp"
-  security_group_id = local.open_vpn_sg_id
-  cidr_blocks = ["0.0.0.0/0"] #this laptop cidr
-}
-resource "aws_security_group_rule" "open_vpn_1194" {
-  type              = "ingress"
-  from_port         =  1194
-  to_port           = 1194
-  protocol          = "tcp"
-  security_group_id = local.open_vpn_sg_id
-  cidr_blocks = ["0.0.0.0/0"] #this laptop cidr
-}
-resource "aws_security_group_rule" "catalogue_vpn" {
-  type              = "ingress"
-  from_port         =  22
-  to_port           = 22
-  protocol          = "tcp"
-  security_group_id = local.catalogue_sg_id
-  source_security_group_id = local.open_vpn_sg_id
-}
+# resource "aws_security_group_rule" "open_vpn_443" {
+#   type              = "ingress"
+#   from_port         =  443
+#   to_port           = 443
+#   protocol          = "tcp"
+#   security_group_id = local.open_vpn_sg_id
+#   cidr_blocks = ["0.0.0.0/0"] #this laptop cidr
+# }
+# resource "aws_security_group_rule" "open_vpn_943" {
+#   type              = "ingress"
+#   from_port         =  943
+#   to_port           = 943
+#   protocol          = "tcp"
+#   security_group_id = local.open_vpn_sg_id
+#   cidr_blocks = ["0.0.0.0/0"] #this laptop cidr
+# }
+# resource "aws_security_group_rule" "open_vpn_1194" {
+#   type              = "ingress"
+#   from_port         =  1194
+#   to_port           = 1194
+#   protocol          = "tcp"
+#   security_group_id = local.open_vpn_sg_id
+#   cidr_blocks = ["0.0.0.0/0"] #this laptop cidr
+# }
+# resource "aws_security_group_rule" "catalogue_vpn" {
+#   type              = "ingress"
+#   from_port         =  22
+#   to_port           = 22
+#   protocol          = "tcp"
+#   security_group_id = local.catalogue_sg_id
+#   source_security_group_id = local.open_vpn_sg_id
+# }
 
-resource "aws_security_group_rule" "catalogue_vpn_8080" {
-  type              = "ingress"
-  from_port         =  8080
-  to_port           = 8080
-  protocol          = "tcp"
-  security_group_id = local.catalogue_sg_id
-  source_security_group_id = local.open_vpn_sg_id
-}
+# resource "aws_security_group_rule" "catalogue_vpn_8080" {
+#   type              = "ingress"
+#   from_port         =  8080
+#   to_port           = 8080
+#   protocol          = "tcp"
+#   security_group_id = local.catalogue_sg_id
+#   source_security_group_id = local.open_vpn_sg_id
+# }
 
 # #looping all sg ids for vpn
 # resource "aws_security_group_rule" "componets_vpn" {
