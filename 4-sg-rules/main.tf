@@ -252,7 +252,7 @@ resource "aws_security_group_rule" "frontend_bastion" {
 }
 
 
-resource "aws_security_group_rule" "frontend_alb_laptop" {
+resource "aws_security_group_rule" "frontend_alb_public" {
   type              = "ingress"
   from_port         =  443
   to_port           = 443
