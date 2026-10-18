@@ -30,4 +30,6 @@ else
     cd $ANSIBLE_DIR
 fi    
 
-ansible-playbook -e component=$component -e environment=$environment main.yaml
+ansible-playbook -e component=$component -e env=$environment main.yaml
+
+#ansible-playbbok -e catalogue -e dev main.yaml

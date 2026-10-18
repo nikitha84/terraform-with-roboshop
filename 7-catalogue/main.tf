@@ -64,10 +64,10 @@ resource "aws_lb_target_group" "catalogue" {
   deregistration_delay = 60 # waiting period before deleting the instance
 
   health_check {
-    healthy_threshold = 2
+    healthy_threshold = 2 #If a target was unhealthy, it needs 2 consecutive {one by onesuccessful checks to become healthy again.
     unhealthy_threshold = 2
-    interval = 10
-    path = "/health"
+    interval = 10 #ALB checks the Catalogue target approximately every 10 seconds.
+    path = "/health" #he ALB sends a request similar to:
     protocol = "HTTP"
     timeout = 2
     matcher = "200-299"
