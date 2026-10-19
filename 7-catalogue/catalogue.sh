@@ -12,7 +12,7 @@ REPO_URL=https://github.com/nikitha84/ansible-roboshop-roles-tf.git
 #chown ec2-user:ec2-user -R 
 
 REPO_DIR=/opt/roboshop/ansible
-ANSIBLE_DIR=roboshop-ansible-role-tf
+ANSIBLE_DIR=ansible-roboshop-roles-tf
 
 
 mkdir -p $REPO_DIR
