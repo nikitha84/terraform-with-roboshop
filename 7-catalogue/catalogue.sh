@@ -8,7 +8,7 @@ dnf install ansible -y
 # git clone ansible-playbook
 # cd ansible-playbook
 # ansible-playbook -i inventory main.yaml
-REPO_URL=https://github.com/nikitha84/roboshop-ansible-role-tf.git
+REPO_URL=https://github.com/nikitha84/ansible-roboshop-roles-tf.git
 #chown ec2-user:ec2-user -R 
 
 REPO_DIR=/opt/roboshop/ansible

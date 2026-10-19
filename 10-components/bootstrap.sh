@@ -8,7 +8,7 @@ dnf install ansible -y
 # git clone ansible-playbook
 # cd ansible-playbook
 # ansible-playbook -i inventory main.yaml
-REPO_URL=https://github.com/nikitha84/roboshop-ansible-role-tf.git
+REPO_URL=https://github.com/nikitha84/ansible-roboshop-roles-tf.git
 
 REPO_DIR=/opt/roboshop/ansible
 ANSIBLE_DIR=roboshop-ansible-role-tf
@@ -29,7 +29,7 @@ else
     cd $ANSIBLE_DIR
 fi    
 
-ansible-playbook -e component=$component -e environment=$environment main.yaml
+ansible-playbook -e component=$component -e env=$environment main.yaml
 
 
 #for loop
