@@ -9,9 +9,10 @@ dnf install ansible -y
 # cd ansible-playbook
 # ansible-playbook -i inventory main.yaml
 REPO_URL=https://github.com/nikitha84/ansible-roboshop-roles-tf.git
+#chown ec2-user:ec2-user -R 
 
 REPO_DIR=/opt/roboshop/ansible
-ANSIBLE_DIR=roboshop-ansible-role-tf
+ANSIBLE_DIR=ansible-roboshop-roles-tf
 
 
 mkdir -p $REPO_DIR
@@ -30,6 +31,8 @@ else
 fi    
 
 ansible-playbook -e component=$component -e env=$environment main.yaml
+
+#ansible-playbbok -e catalogue -e dev main.yaml
 
 
 #for loop
