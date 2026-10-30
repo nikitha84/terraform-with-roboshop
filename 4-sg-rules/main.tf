@@ -306,14 +306,14 @@ resource "aws_security_group_rule" "open_vpn_1194" {
   security_group_id = local.open_vpn_sg_id
   cidr_blocks = ["0.0.0.0/0"] #this laptop cidr
 }
-# resource "aws_security_group_rule" "catalogue_vpn" {
-#   type              = "ingress"
-#   from_port         =  22
-#   to_port           = 22
-#   protocol          = "tcp"
-#   security_group_id = local.catalogue_sg_id
-#   source_security_group_id = local.open_vpn_sg_id
-# }
+resource "aws_security_group_rule" "catalogue_vpn" {
+  type              = "ingress"
+  from_port         =  22
+  to_port           = 22
+  protocol          = "tcp"
+  security_group_id = local.catalogue_sg_id
+  source_security_group_id = local.open_vpn_sg_id
+}
 
 # resource "aws_security_group_rule" "catalogue_vpn_8080" {
 #   type              = "ingress"
