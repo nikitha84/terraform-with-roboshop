@@ -5,8 +5,8 @@ variable "environment" {
     default = "dev"
 }
 variable "zone_id" {
-  default = "Z066380616A571FLFNCI3"
+  default = "Z06834852K0S0EA2JP4US"
 }
 variable "domain_name" {
-  default = "nikitha.fun"
+  default = "susmitha.fun"
 }

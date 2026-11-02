@@ -1,10 +1,10 @@
 data "aws_ami" "openvpn" {
   most_recent = true
-  owners = ["973714476881"]
+  owners = ["444663524611"]
 
   filter {
     name   = "name"
-    values = ["Redhat-9-DevOps-Practice*"] # *-we will get ami_id with recent date
+    values = ["OpenVPN Access Server Community Image*"] # *-we will get ami_id with recent date
   }
 
   filter {

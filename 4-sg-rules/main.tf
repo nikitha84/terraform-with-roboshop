@@ -273,7 +273,7 @@ resource "aws_security_group_rule" "bastion_laptop" {
   cidr_blocks = ["0.0.0.0/0"] #this laptop cidr
 }
 
-resource "aws_security_group_rule" "open_vpn_public" {
+resource "aws_security_group_rule" "open_vpn_public" { #to connect vpn from laptop
   type              = "ingress"
   from_port         =  22
   to_port           = 22
@@ -282,7 +282,7 @@ resource "aws_security_group_rule" "open_vpn_public" {
   cidr_blocks = ["0.0.0.0/0"] #this laptop cidr
 }
 
-resource "aws_security_group_rule" "open_vpn_443" {
+resource "aws_security_group_rule" "open_vpn_443" { 
   type              = "ingress"
   from_port         =  443
   to_port           = 443
