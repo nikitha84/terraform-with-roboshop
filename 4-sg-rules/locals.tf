@@ -40,14 +40,14 @@ locals {
             sg_id = local.rabbitmq_sg_id
             port = 22
         }
-        catalogue_22= {
-            sg_id = local.catalogue_sg_id
-            port = 22
-        }
-        catalogue_8080 = {
-            sg_id = local.catalogue_sg_id
-            port = 8080
-        }
+        # catalogue_22= {
+        #     sg_id = local.catalogue_sg_id
+        #     port = 22
+        # }
+        # catalogue_8080 = {
+        #     sg_id = local.catalogue_sg_id
+        #     port = 8080
+        # }
 
         #for devolopers to browse
         backend_alb= {
